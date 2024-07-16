@@ -10,6 +10,7 @@ module.exports = {
         customgrey: '#313131',
         lightgrey:'#4F4F4F',
         darkgrey:'#1f1f1f',
+        greytext:'#9C9C9C'
       }
     },
   },
