@@ -24,8 +24,8 @@ function App() {
 
   if (isMobile) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <h1 className="text-xl font-bold text-red-500">
+      <div className="flex items-center justify-center h-screen w-full bg-darkgrey">
+        <h1 className="text-2xl font-bold text-white">
           Please open on a desktop
         </h1>
       </div>
