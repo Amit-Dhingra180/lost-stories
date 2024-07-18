@@ -10,7 +10,7 @@ const Review = () => {
         <SideMenu/>
         <div className=' bg-darkgrey w-full min-h-screen'>
             <Navbar/>
-            <Details/>
+            <Content/>
         </div>
     </div>
   )

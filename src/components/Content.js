@@ -1,58 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Story from './Story'
-import { useEffect, useState } from 'react'
+import Details from './Details';
 
 const Content = () => {
+    const [stories, setStories] = useState([
+        {id: 1, title: 'Sample Title 1', creator: 'Sample Creator 1', category: 'Action', createdOn: '12/05/2009', status: 'Yet'},
+        {id: 2, title: 'Sample Title 2', creator: 'Sample Creator 2', category: 'Drama', createdOn: '15/06/2010', status: 'Yet'}
+    ]);
 
-    const [stories, setStories] = useState([{id:1,title:'sampletitle',creator:'samplecreator',category:'action',createdOn:'12/05/2009',status:'yet'},{id:2,title:'sampletitle',creator:'samplecreator',category:'action',createdOn:'12/05/2009',status:'yet'}])
+    const [selectedStory, setSelectedStory] = useState(null);
 
-    const fetchData = async () => {
-        try {
-          const response = await fetch('enterURL'); //Enter your API endpoint
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const data = await response.json();
-          setStories(data); 
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
+    const handleStoryClick = (story) => {
+        setSelectedStory(story);
+    };
 
-  return (
-    <div className='text-white w-full'>
-        <h1 className='text-2xl mt-6 ml-7'>Stories for Review</h1>
-        
-        <div className='px-[30px]'>
-        <table className='w-full mt-8'>
-            <tr className='text-lightgrey'>
-                <td>
-                    Title
-                </td>
-                <td>
-                    Creator
-                </td>
-                <td>
-                    Category
-                </td>
-                <td>
-                    Created on
-                </td>
-                <td>
-                    Status
-                </td>
-            </tr>
+    const handleBackClick = () => {
+        setSelectedStory(null);
+    };
 
-            {stories.map((story) => (
-            <Story key={story.id} story={story} />
-          ))}
-                
-            
-        </table>
+    return (
+        <div className='text-white w-full'>
+            <h1 className='text-2xl mt-6 ml-7'>Stories for Review</h1>
+            <div className='px-[30px]'>
+                {!selectedStory ? (
+                    <table className='w-full mt-8'>
+                        <thead>
+                            <tr className='text-lightgrey'>
+                                <td>Title</td>
+                                <td>Creator</td>
+                                <td>Category</td>
+                                <td>Created on</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {stories.map((story) => (
+                                <Story key={story.id} story={story} onClick={() => handleStoryClick(story)} />
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <Details selectedStory={selectedStory} handleBackClick={handleBackClick} />
+                )}
+            </div>
         </div>
-
-    </div>
-  )
+    )
 }
 
 export default Content
