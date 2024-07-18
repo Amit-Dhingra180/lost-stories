@@ -1,11 +1,11 @@
 import React from 'react'
-
+import SideMenuOptions from './SideMenuOptions'
 
 const SideMenu = () => {
   return (
     <div className='w-[240px] min-h-screen bg-black py-[32px] text-white'>
       
-        <div className='flex justify-center'>
+        <div className='flex justify-center'> 
           <img src='\logo.png' className='w-[136px] h-[39px]'/>
         </div>
         
@@ -17,19 +17,11 @@ const SideMenu = () => {
           <span>Dashboard</span>
         </div>
 
-        <div className='flex justify-between mt-[20px]'>
+        <SideMenuOptions option='Stories'/>
+        <SideMenuOptions option='Users and Roles'/>
+        <SideMenuOptions option='Tickets'/>
 
-          <div className='flex'>
-            <img src='\musicIcon.png' className='w-[24px] h-[24px] mr-2'/>
-          <span>Stories</span>
-          </div>
-
-          <div className='flex items-end'>
-            <img src='\expand.png' className='w-[20px] h-[20px]'/>
-          </div>
-          
-        </div>
-
+        
       </div>
 
     </div>

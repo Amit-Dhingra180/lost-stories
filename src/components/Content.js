@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const Content = () => {
 
-    const [stories, setStories] = useState([])
+    const [stories, setStories] = useState([{id:1,title:'sampletitle',creator:'samplecreator',category:'action',createdOn:'12/05/2009',status:'yet'},{id:2,title:'sampletitle',creator:'samplecreator',category:'action',createdOn:'12/05/2009',status:'yet'}])
 
     const fetchData = async () => {
         try {
