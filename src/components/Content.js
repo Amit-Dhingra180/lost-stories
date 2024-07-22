@@ -1,49 +1,31 @@
 import React, { useState } from 'react'
 import Story from './Story'
-import Details from './Details';
+import { useNavigate } from 'react-router-dom';
 
 
 const Content = () => {
+    const navigate = useNavigate();
     const [stories, setStories] = useState([
-        {id: 1, title: 'Sample Title', creator: 'Sample Creator', category: 'Action', createdOn: '12/05/2009', status: 'Yet'},
+        {id: 1, title: 'Sample Title 1', creator: 'Sample Creator 1', category: 'Action', createdOn: '12/05/2009', status: 'Yet'},
         {id: 2, title: 'Sample Title 2', creator: 'Sample Creator 2', category: 'Drama', createdOn: '15/06/2010', status: 'Yet'}
     ]);
 
-    const [selectedStory, setSelectedStory] = useState(null);
 
     const handleStoryClick = (story) => {
-        setSelectedStory(story);
+        navigate(`/StoryInfo/${story.id}`);
     };
 
-    const handleBackClick = () => {
-        setSelectedStory(null);
-    };
 
     return (
         <div className='text-white w-full'>
-            {!selectedStory?(
+            
                 <h1 className='text-2xl mt-7 ml-7'>
                     Stories for Review
                 </h1>
-            ) : (
-                <div className='flex justify-between items-center'>
-
-                <h1 className='text-2xl mt-7 ml-7'>
-                    {selectedStory.title}
-                    <span className='text-greytext'> by {selectedStory.creator}</span>
-                    <h2 className='text-[18px] text-customorange'>{selectedStory.category}</h2>
-                </h1>
-
-                <button className='text-white w-[98px] h-[46px] rounded-lg bg-customorange px-6 py-3 font-nunito mr-[5%]'>
-                    Assign
-                </button>
-                   
-                </div>
-            )}
-
+            
 
             <div className='px-[30px] py-4'>
-                {!selectedStory ? (
+                
                     <table className='w-full mt-8'>
                         <thead>
                             <tr className='text-lightgrey'>
@@ -60,9 +42,7 @@ const Content = () => {
                             ))}
                         </tbody>
                     </table>
-                ) : (
-                    <Details selectedStory={selectedStory} handleBackClick={handleBackClick} />
-                )}
+                
             </div>
         </div>
     )

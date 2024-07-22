@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Review from './pages/Review';
 import Test from './pages/Test';
+import StoryInfo from './pages/StoryInfo';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,6 +40,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/test" element={<Test />} />
           <Route path="/review" element={<Review />} />
+          <Route path="/StoryInfo/:id" element={<StoryInfo />} />
         </Routes>
       </BrowserRouter>
     </div>
