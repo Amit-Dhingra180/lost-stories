@@ -14,12 +14,12 @@ const Details = ({ selectedStory, handleBackClick }) => {
           <ProfileItem text='Stuff' number='34'/>
           <ProfileItem text='Stuff' number='34'/>
         
-          <button className='text-customorange min-h-6 w-full text-center border-2 border-customlightorange rounded-[8px] mb-4 mt-6'>
-            <span>View </span>
+          <button className='text-customorange min-h-6 w-full text-center border-2 border-customlightorange rounded-[8px] mb-4 mt-6 py-2'>
+            <span>View Public Profile</span>
           </button>
 
-          <button className='text-detailsgrey min-h-6 w-full text-center border-2 border-bordergrey rounded-[8px]'>
-            <span>Link</span>
+          <button className='text-detailsgrey min-h-6 w-full text-center border-2 border-bordergrey rounded-[8px] py-2'>
+            <span>https://somelink.com</span>
           </button>
 
       </div>
