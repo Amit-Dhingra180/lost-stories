@@ -3,7 +3,7 @@ import ProfileItem from './ProfileItem'
 
 const Details = ({ selectedStory, handleBackClick }) => {
   return (
-    <div className='flex p-1 space-x-6'>
+    <div className='flex p-1 space-x-6 font-nunito'>
 
       <div className='bg-white h-[534px] w-[25%] rounded-2xl py-[40px] flex flex-col items-center px-[20px]'>
         <img src='\profilepic.png' className='w-[110px] h-[110px] rounded-full mb-2'/>

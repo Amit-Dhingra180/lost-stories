@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import SideMenu from '../components/SideMenu'
 import Content from '../components/Content'
-import Details from '../components/Details'
+
 
 const Review = () => {
   return (

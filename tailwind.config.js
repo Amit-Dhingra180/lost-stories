@@ -17,7 +17,10 @@ module.exports = {
         detailsgrey:'#1B2728',
         bordergrey:'#F0F1FA',
 
-      }
+      },
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+      },
     },
   },
   plugins: [],

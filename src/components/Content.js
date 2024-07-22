@@ -22,15 +22,23 @@ const Content = () => {
     return (
         <div className='text-white w-full'>
             {!selectedStory?(
-                <h1 className='text-2xl mt-6 ml-7'>
+                <h1 className='text-2xl mt-7 ml-7'>
                     Stories for Review
                 </h1>
             ) : (
-                <h1 className='text-2xl mt-6 ml-7'>
+                <div className='flex justify-between items-center'>
+
+                <h1 className='text-2xl mt-7 ml-7'>
                     {selectedStory.title}
                     <span className='text-greytext'> by {selectedStory.creator}</span>
                     <h2 className='text-[18px] text-customorange'>{selectedStory.category}</h2>
                 </h1>
+
+                <button className='text-white w-[98px] h-[46px] rounded-lg bg-customorange px-6 py-3 font-nunito mr-[5%]'>
+                    Assign
+                </button>
+                   
+                </div>
             )}
 
 
