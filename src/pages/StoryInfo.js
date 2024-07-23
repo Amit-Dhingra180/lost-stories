@@ -12,14 +12,14 @@ const StoryInfo = () => {
     const navigate = useNavigate();
     
     const handleBackClick = () => {
-        navigate('/review');
+        navigate('/review', { replace: true });
     }
     return (
         <div className='flex text-white'>
             <SideMenu/>
             <div className=' bg-darkgrey w-full min-h-screen'>
                 <Navbar/>
-                <div>{id}</div>
+                <div>Story id - {id}</div>
                 <div className='px-[30px] py-2'>
                 <Details selectedStory={story} handleBackClick={handleBackClick}/>
                 </div>

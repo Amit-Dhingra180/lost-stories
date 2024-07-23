@@ -1,7 +1,10 @@
 import React from 'react';
 import ProfileItem from './ProfileItem';
+import DetailsHeading from './DetailsHeading';
 
 const Details = ({ selectedStory, handleBackClick }) => {
+  const headings = ['Heading-1', 'Heading-2','Heading-3','Heading-4','Heading-5'];
+
   return (
     <div>
       <div className='flex justify-between items-center mb-2'>
@@ -29,9 +32,19 @@ const Details = ({ selectedStory, handleBackClick }) => {
             <span>https://somelink.com</span>
           </button>
         </div>
-        <div className='bg-white h-[534px] w-[70%] rounded-2xl'>
-          <button onClick={handleBackClick} className='text-black'>Back</button>
+
+
+        <div className='bg-white h-[534px] w-[70%] rounded-2xl px-6 py-[40px]'>
+          
+
+            <DetailsHeading headings={headings}/>
+      
+           
+          <div>
+          </div>      
         </div>
+
+
       </div>
     </div>
   );
