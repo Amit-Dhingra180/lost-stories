@@ -1,12 +1,14 @@
 import React from 'react';
 import ProfileItem from './ProfileItem';
 import DetailsHeading from './DetailsHeading';
+import CustomInput from './CustomInput';
+import Dropdown from './Dropdown';
 
 const Details = ({ selectedStory, handleBackClick }) => {
   const headings = ['Heading-1', 'Heading-2','Heading-3','Heading-4','Heading-5'];
 
   return (
-    <div>
+    <div className='font-nunito'>
       <div className='flex justify-between items-center mb-2'>
         <h1 className='text-2xl mt-5'>
           {selectedStory.title}
@@ -36,11 +38,42 @@ const Details = ({ selectedStory, handleBackClick }) => {
 
         <div className='bg-white h-[534px] w-[70%] rounded-2xl px-6 py-[40px]'>
           
-
             <DetailsHeading headings={headings}/>
-      
-           
+            
+            <div className='h-[294px] w-full mt-[32px] space-y-[26px]'>
+
+              <div className='flex justify-between h-[68px] text-detailsgrey'>
+               <CustomInput title='Name' type='text'/>
+               <CustomInput title='Date' type='date'/>
+              </div>
+
+
+              <div className='flex justify-between h-[68px] text-detailsgrey'>
+               <CustomInput title='Name' type='text'/>
+               <Dropdown title='Something'/>
+              </div>
+
+              <div className='flex justify-between h-[68px] text-detailsgrey'>
+                <Dropdown title='Something'/>
+                <Dropdown title='Something'/>
+              </div>
+
+
+            </div>
+
+
+            <div className='flex justify-between mt-5 w-full '>
+            <button className='text-white w-[98px] h-[46px] rounded-lg bg-red-700 px-6 py-3 font-nunito'>
+              Reject
+            </button>
+            <button className='text-white w-[98px] h-[46px] rounded-lg bg-green-600 py-3 font-nunito'>
+              Approve
+            </button>
+            </div>
+
+
           <div>
+
           </div>      
         </div>
 
